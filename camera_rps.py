@@ -25,8 +25,9 @@ class RPS:
         cap = cv2.VideoCapture(0)
         data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 
-        start_countdown = time.time()
-        end_countdown = start_countdown + 7
+        total_duration = 6
+        time_passed = 0
+        start_time = time.time()
 
         while True: 
             ret, frame = cap.read()
@@ -39,7 +40,10 @@ class RPS:
             # Press p to close the window and input the answer on camera
             if cv2.waitKey(1) & 0xFF == ord('p'):
                 break
-            if time.time() > end_countdown:
+            if time.time() - start_time >= time_passed:
+                time_passed += 1
+                print(total_duration - time_passed)
+            if time_passed == total_duration:
                 break
                     
         # After the loop release the cap object
@@ -71,10 +75,10 @@ def play(winning_score = 3):
         print(f"{game.winner} won this round")
         print(f"The score is {game.user_wins} - {game.computer_wins} to you!")
         if game.user_wins == winning_score:
-            print(f"User wins the best of {winning_score * 2 - 1} match!")
+            print(f"User wins the best of {2 * winning_score - 1} match!")
             break
         elif game.computer_wins == winning_score:
-            print(f"Computer wins the best of {winning_score * 2 - 1} match!")
+            print(f"Computer wins the best of {2 * winning_score - 1} match!")
             break
         input("Press enter to continue...")
 
