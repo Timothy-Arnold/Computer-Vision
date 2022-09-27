@@ -91,8 +91,6 @@ if __name__ == '__main__':
     play()
 ```
 
-
-
 ## Milestone 3
 
 I changed the "get_user_choice" method from a manual input to an input using the camera and keras_model for image recognition (which required the previously made virtual environment to be enabled). Combining it with the get_prediction function allows the camera to constantly make a "best guess" at which signal is being shown on camera: Rock, Paper, Scissors, or Nothing. I then added a countdown into the While loop, which prints a countdown from 6 in the terminal before the camera's latest prediction is taken to be the user's input.
@@ -135,4 +133,4 @@ I changed the "get_user_choice" method from a manual input to an input using the
 
 ## Conclusion
 
-If I were to improve this project, I would consider making the countdown timer display in the camera feed, rather than being printed in the terminal.
+In this project I combined a trained machine learning model for image recognition with my own game code to make RPS fully playable with the computer. If I were to improve this project, I would consider making the countdown timer display in the camera feed for better viewability, rather than being printed in the terminal.
