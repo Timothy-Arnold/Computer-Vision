@@ -4,11 +4,6 @@ import numpy as np
 import random
 import time
 
-def get_prediction(prediction):
-    predicted_index = np.argmax(prediction)
-    choices = ["Rock", "Paper", "Scissors", "Nothing"]
-    return choices[predicted_index]
-
 class RPS:
 
     def __init__(self):
@@ -18,6 +13,12 @@ class RPS:
     def get_computer_choice(self):
         computer_choice = random.choice(["Rock", "Paper", "Scissors"])
         return computer_choice
+
+    def get_prediction(self, prediction):
+        predicted_index = np.argmax(prediction)
+        choices = ["Rock", "Paper", "Scissors", "Nothing"]
+        predicted_choice = choices[predicted_index]
+        return predicted_choice
 
     def get_user_choice(self):
 
@@ -51,7 +52,9 @@ class RPS:
         # Destroy all the windows
         cv2.destroyAllWindows()
 
-        return get_prediction(prediction)
+        predicted_choice = RPS.get_prediction(self, prediction)
+
+        return predicted_choice
 
     def get_winner(self,computer_choice, user_choice):
         if computer_choice == user_choice:

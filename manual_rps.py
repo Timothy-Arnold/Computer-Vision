@@ -43,4 +43,4 @@ def play(winning_score = 3):
             break
 
 if __name__ == '__main__':
-    play(5)
+    play()
