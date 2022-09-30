@@ -67,6 +67,7 @@ class RPS:
             self.computer_wins += 1
         return self.winner
 
+#Start a game of RPS which is best of 5 by default
 def play(winning_score = 3):
     game = RPS()
     while True:
