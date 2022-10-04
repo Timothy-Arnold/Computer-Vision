@@ -56,7 +56,7 @@ class RPS:
 
         return predicted_choice
 
-    def get_winner(self,computer_choice, user_choice):
+    def get_winner(self, computer_choice, user_choice):
         if computer_choice == user_choice:
             self.winner = "Noone"
         elif [computer_choice, user_choice] in [["Rock", "Paper"], ["Paper", "Scissors"], ["Scissors", "Rock"]]:
@@ -68,7 +68,7 @@ class RPS:
         return self.winner
 
 #Start a game of RPS which is best of 5 by default
-def play(winning_score = 3):
+def play(winning_score=3):
     game = RPS()
     while True:
         computer_choice = game.get_computer_choice()
